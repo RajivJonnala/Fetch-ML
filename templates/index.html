@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Prediction</title>
+</head>
+<body>
+    <h1>Receipt Prediction Application</h1>
+    <form id="predictForm">
+        <button type="submit">Predict for 12 Months</button>
+    </form>
+    
+    <h2>Prediction Result</h2>
+    <img id="resultPlot" src="" alt="Predicted Receipts" style="display:none;"/>
+    
+    <script>
+        document.getElementById('predictForm').onsubmit = async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('num_months', 12);
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            const img = document.getElementById('resultPlot');
+            img.src = data.plot_url;
+            img.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
