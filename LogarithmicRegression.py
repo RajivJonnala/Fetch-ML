@@ -74,7 +74,7 @@ with torch.no_grad():
 
 
 
-# Optional: Plotting the results
+# Plotting the results
 plt.figure(figsize=(10, 6))
 plt.plot(monthly_data.index, monthly_data['Receipt_Count'], marker='o', label='Historical Data')
 plt.xticks(rotation=45)
