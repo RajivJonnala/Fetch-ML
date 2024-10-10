@@ -26,7 +26,7 @@ You can install the necessary packages using pip:
 pip install flask torch torchvision torchaudio pandas numpy matplotlib scikit-learn
 ```
 ## Project Structure
-    ```bash
+```bash
     /receipt_prediction_app
     ├── app.py                # Main Flask application
     ├── data_daily.csv       # CSV file containing daily receipt data
@@ -34,7 +34,7 @@ pip install flask torch torchvision torchaudio pandas numpy matplotlib scikit-le
     ├── LogarithmicRegression.py #  Model
     └── templates
         └── index.html       # HTML template for user interface
-    ```
+```
 ## How to Run the Application
 1. Clone this repository to your local machine:
 
